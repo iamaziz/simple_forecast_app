@@ -16,7 +16,8 @@ class InputData:
         Returns:
 
         """
-        sample = st.selectbox(
+        st1, st2 = st.columns(2)
+        sample = st1.selectbox(
             "Sample datasets",
             options=["", "sample1", "sample2", "avg_daily_air_temp_celsius_helsinki"],
         )
@@ -24,15 +25,14 @@ class InputData:
             file_ = f"data/{sample}.csv"
             return pd.read_csv(file_)
 
-        uploaded_data = cls.read_file()
+        uploaded_data = cls.read_file(st2)
         if uploaded_data is not None:
             return uploaded_data
 
     @classmethod
-    def read_file(cls):
-        global DATE_FORMATTER
+    def read_file(cls, st_):
 
-        file_ = st.file_uploader("Upload your dataset (csv file)")
+        file_ = st_.file_uploader("Upload your dataset (csv file)")
         if not file_:
             st.stop()
 
