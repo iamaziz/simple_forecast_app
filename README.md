@@ -1,5 +1,5 @@
 ---
-title: Simple_forecast_app
+title: Simple_forecast
 emoji: 📉
 colorFrom: purple
 colorTo: purple
