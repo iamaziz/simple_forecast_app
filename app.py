@@ -68,7 +68,8 @@ class InputData:
         df.columns = ["ds", "y"]
         # -- date column
         try:
-            if st.session_state.date_formatter:
+            date_formatter = st.session_state.date_formatter
+            if date_formatter and date_formatter is not None:
                 df["ds"] = pd.to_datetime(
                     df["ds"], format=st.session_state.date_formatter
                 )
