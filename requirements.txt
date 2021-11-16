@@ -1,1 +1,11 @@
-streamlit
+# Python3.8
+
+# -- data and processing
+pandas
+
+# -- UI
+streamlit==1.2.0
+
+# -- model
+pystan==2.19.1.1
+prophet
